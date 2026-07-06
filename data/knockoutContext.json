@@ -1,0 +1,805 @@
+{
+  "tournamentLabel": "FIFA World Cup 2026™",
+  "source": {
+    "name": "FIFA website data endpoint (fixtures/results)",
+    "url": "https://api.fifa.com/api/v3/calendar/matches?idCompetition=17&idSeason=285023&count=500&language=en"
+  },
+  "dataStatus": "fetched",
+  "notes": [],
+  "completedMatches": [
+    {
+      "id": "M73",
+      "matchNumber": 73,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43883",
+        "name": "South Africa",
+        "code": "RSA"
+      },
+      "teamB": {
+        "sourceId": "43899",
+        "name": "Canada",
+        "code": "CAN"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-06-28T19:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 0,
+        "b": 1
+      },
+      "penalties": null,
+      "winner": "Canada",
+      "highlighted": false
+    },
+    {
+      "id": "M76",
+      "matchNumber": 76,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43924",
+        "name": "Brazil",
+        "code": "BRA"
+      },
+      "teamB": {
+        "sourceId": "43819",
+        "name": "Japan",
+        "code": "JPN"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-06-29T17:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 2,
+        "b": 1
+      },
+      "penalties": null,
+      "winner": "Brazil",
+      "highlighted": false
+    },
+    {
+      "id": "M74",
+      "matchNumber": 74,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43948",
+        "name": "Germany",
+        "code": "GER"
+      },
+      "teamB": {
+        "sourceId": "43928",
+        "name": "Paraguay",
+        "code": "PAR"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-06-29T20:30:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 1,
+        "b": 1
+      },
+      "penalties": {
+        "a": 3,
+        "b": 4
+      },
+      "winner": "Paraguay",
+      "highlighted": false
+    },
+    {
+      "id": "M75",
+      "matchNumber": 75,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43960",
+        "name": "Netherlands",
+        "code": "NED"
+      },
+      "teamB": {
+        "sourceId": "43872",
+        "name": "Morocco",
+        "code": "MAR"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-06-30T01:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 1,
+        "b": 1
+      },
+      "penalties": {
+        "a": 2,
+        "b": 3
+      },
+      "winner": "Morocco",
+      "highlighted": false
+    },
+    {
+      "id": "M78",
+      "matchNumber": 78,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43854",
+        "name": "Côte d'Ivoire",
+        "code": "CIV"
+      },
+      "teamB": {
+        "sourceId": "43961",
+        "name": "Norway",
+        "code": "NOR"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-06-30T17:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 1,
+        "b": 2
+      },
+      "penalties": null,
+      "winner": "Norway",
+      "highlighted": false
+    },
+    {
+      "id": "M77",
+      "matchNumber": 77,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43946",
+        "name": "France",
+        "code": "FRA"
+      },
+      "teamB": {
+        "sourceId": "43970",
+        "name": "Sweden",
+        "code": "SWE"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-06-30T21:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 3,
+        "b": 0
+      },
+      "penalties": null,
+      "winner": "France",
+      "highlighted": false
+    },
+    {
+      "id": "M79",
+      "matchNumber": 79,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43911",
+        "name": "Mexico",
+        "code": "MEX"
+      },
+      "teamB": {
+        "sourceId": "43927",
+        "name": "Ecuador",
+        "code": "ECU"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-01T02:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 2,
+        "b": 0
+      },
+      "penalties": null,
+      "winner": "Mexico",
+      "highlighted": false
+    },
+    {
+      "id": "M80",
+      "matchNumber": 80,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43942",
+        "name": "England",
+        "code": "ENG"
+      },
+      "teamB": {
+        "sourceId": "20014",
+        "name": "Congo DR",
+        "code": "COD"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-01T16:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 2,
+        "b": 1
+      },
+      "penalties": null,
+      "winner": "England",
+      "highlighted": false
+    },
+    {
+      "id": "M82",
+      "matchNumber": 82,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43935",
+        "name": "Belgium",
+        "code": "BEL"
+      },
+      "teamB": {
+        "sourceId": "43879",
+        "name": "Senegal",
+        "code": "SEN"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-01T20:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 3,
+        "b": 2
+      },
+      "penalties": null,
+      "winner": "Belgium",
+      "highlighted": false
+    },
+    {
+      "id": "M81",
+      "matchNumber": 81,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43921",
+        "name": "USA",
+        "code": "USA"
+      },
+      "teamB": {
+        "sourceId": "44037",
+        "name": "Bosnia and Herzegovina",
+        "code": "BIH"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-02T00:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 2,
+        "b": 0
+      },
+      "penalties": null,
+      "winner": "USA",
+      "highlighted": false
+    },
+    {
+      "id": "M84",
+      "matchNumber": 84,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43969",
+        "name": "Spain",
+        "code": "ESP"
+      },
+      "teamB": {
+        "sourceId": "43934",
+        "name": "Austria",
+        "code": "AUT"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-02T19:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 3,
+        "b": 0
+      },
+      "penalties": null,
+      "winner": "Spain",
+      "highlighted": false
+    },
+    {
+      "id": "M83",
+      "matchNumber": 83,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43963",
+        "name": "Portugal",
+        "code": "POR"
+      },
+      "teamB": {
+        "sourceId": "43938",
+        "name": "Croatia",
+        "code": "CRO"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-02T23:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 2,
+        "b": 1
+      },
+      "penalties": null,
+      "winner": "Portugal",
+      "highlighted": false
+    },
+    {
+      "id": "M85",
+      "matchNumber": 85,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43971",
+        "name": "Switzerland",
+        "code": "SUI"
+      },
+      "teamB": {
+        "sourceId": "43843",
+        "name": "Algeria",
+        "code": "ALG"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-03T03:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 2,
+        "b": 0
+      },
+      "penalties": null,
+      "winner": "Switzerland",
+      "highlighted": false
+    },
+    {
+      "id": "M88",
+      "matchNumber": 88,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43976",
+        "name": "Australia",
+        "code": "AUS"
+      },
+      "teamB": {
+        "sourceId": "43855",
+        "name": "Egypt",
+        "code": "EGY"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-03T18:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 1,
+        "b": 1
+      },
+      "penalties": {
+        "a": 2,
+        "b": 4
+      },
+      "winner": "Egypt",
+      "highlighted": false
+    },
+    {
+      "id": "M86",
+      "matchNumber": 86,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43922",
+        "name": "Argentina",
+        "code": "ARG"
+      },
+      "teamB": {
+        "sourceId": "43850",
+        "name": "Cabo Verde",
+        "code": "CPV"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-03T22:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 3,
+        "b": 2
+      },
+      "penalties": null,
+      "winner": "Argentina",
+      "highlighted": false
+    },
+    {
+      "id": "M87",
+      "matchNumber": 87,
+      "round": "Round of 32",
+      "teamA": {
+        "sourceId": "43926",
+        "name": "Colombia",
+        "code": "COL"
+      },
+      "teamB": {
+        "sourceId": "43860",
+        "name": "Ghana",
+        "code": "GHA"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-04T01:30:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 1,
+        "b": 0
+      },
+      "penalties": null,
+      "winner": "Colombia",
+      "highlighted": false
+    },
+    {
+      "id": "M90",
+      "matchNumber": 90,
+      "round": "Round of 16",
+      "teamA": {
+        "sourceId": "43899",
+        "name": "Canada",
+        "code": "CAN"
+      },
+      "teamB": {
+        "sourceId": "43872",
+        "name": "Morocco",
+        "code": "MAR"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-04T17:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 0,
+        "b": 3
+      },
+      "penalties": null,
+      "winner": "Morocco",
+      "highlighted": false
+    },
+    {
+      "id": "M89",
+      "matchNumber": 89,
+      "round": "Round of 16",
+      "teamA": {
+        "sourceId": "43928",
+        "name": "Paraguay",
+        "code": "PAR"
+      },
+      "teamB": {
+        "sourceId": "43946",
+        "name": "France",
+        "code": "FRA"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-04T21:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 0,
+        "b": 1
+      },
+      "penalties": null,
+      "winner": "France",
+      "highlighted": false
+    },
+    {
+      "id": "M91",
+      "matchNumber": 91,
+      "round": "Round of 16",
+      "teamA": {
+        "sourceId": "43924",
+        "name": "Brazil",
+        "code": "BRA"
+      },
+      "teamB": {
+        "sourceId": "43961",
+        "name": "Norway",
+        "code": "NOR"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-05T20:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 1,
+        "b": 2
+      },
+      "penalties": null,
+      "winner": "Norway",
+      "highlighted": false
+    },
+    {
+      "id": "M92",
+      "matchNumber": 92,
+      "round": "Round of 16",
+      "teamA": {
+        "sourceId": "43911",
+        "name": "Mexico",
+        "code": "MEX"
+      },
+      "teamB": {
+        "sourceId": "43942",
+        "name": "England",
+        "code": "ENG"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-06T01:00:00Z",
+      "status": "confirmed result",
+      "score": {
+        "a": 2,
+        "b": 3
+      },
+      "penalties": null,
+      "winner": "England",
+      "highlighted": false
+    }
+  ],
+  "upcomingMatches": [
+    {
+      "id": "M93",
+      "matchNumber": 93,
+      "round": "Round of 16",
+      "teamA": {
+        "sourceId": "43963",
+        "name": "Portugal",
+        "code": "POR"
+      },
+      "teamB": {
+        "sourceId": "43969",
+        "name": "Spain",
+        "code": "ESP"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-06T19:00:00Z",
+      "status": "upcoming fixture",
+      "score": null,
+      "penalties": null,
+      "winner": null,
+      "highlighted": true
+    },
+    {
+      "id": "M94",
+      "matchNumber": 94,
+      "round": "Round of 16",
+      "teamA": {
+        "sourceId": "43921",
+        "name": "USA",
+        "code": "USA"
+      },
+      "teamB": {
+        "sourceId": "43935",
+        "name": "Belgium",
+        "code": "BEL"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-07T00:00:00Z",
+      "status": "upcoming fixture",
+      "score": null,
+      "penalties": null,
+      "winner": null,
+      "highlighted": true
+    },
+    {
+      "id": "M95",
+      "matchNumber": 95,
+      "round": "Round of 16",
+      "teamA": {
+        "sourceId": "43922",
+        "name": "Argentina",
+        "code": "ARG"
+      },
+      "teamB": {
+        "sourceId": "43855",
+        "name": "Egypt",
+        "code": "EGY"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-07T16:00:00Z",
+      "status": "upcoming fixture",
+      "score": null,
+      "penalties": null,
+      "winner": null,
+      "highlighted": true
+    },
+    {
+      "id": "M96",
+      "matchNumber": 96,
+      "round": "Round of 16",
+      "teamA": {
+        "sourceId": "43971",
+        "name": "Switzerland",
+        "code": "SUI"
+      },
+      "teamB": {
+        "sourceId": "43926",
+        "name": "Colombia",
+        "code": "COL"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-07T20:00:00Z",
+      "status": "upcoming fixture",
+      "score": null,
+      "penalties": null,
+      "winner": null,
+      "highlighted": true
+    },
+    {
+      "id": "M97",
+      "matchNumber": 97,
+      "round": "Quarter-final",
+      "teamA": {
+        "sourceId": "43946",
+        "name": "France",
+        "code": "FRA"
+      },
+      "teamB": {
+        "sourceId": "43872",
+        "name": "Morocco",
+        "code": "MAR"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-09T20:00:00Z",
+      "status": "upcoming fixture",
+      "score": null,
+      "penalties": null,
+      "winner": null,
+      "highlighted": false
+    },
+    {
+      "id": "M98",
+      "matchNumber": 98,
+      "round": "Quarter-final",
+      "teamA": null,
+      "teamB": null,
+      "placeholderA": "Winner of M93",
+      "placeholderB": "Winner of M94",
+      "kickoffUtc": "2026-07-10T19:00:00Z",
+      "status": "upcoming fixture",
+      "score": null,
+      "penalties": null,
+      "winner": null,
+      "highlighted": false
+    },
+    {
+      "id": "M99",
+      "matchNumber": 99,
+      "round": "Quarter-final",
+      "teamA": {
+        "sourceId": "43961",
+        "name": "Norway",
+        "code": "NOR"
+      },
+      "teamB": {
+        "sourceId": "43942",
+        "name": "England",
+        "code": "ENG"
+      },
+      "placeholderA": null,
+      "placeholderB": null,
+      "kickoffUtc": "2026-07-11T21:00:00Z",
+      "status": "upcoming fixture",
+      "score": null,
+      "penalties": null,
+      "winner": null,
+      "highlighted": false
+    },
+    {
+      "id": "M100",
+      "matchNumber": 100,
+      "round": "Quarter-final",
+      "teamA": null,
+      "teamB": null,
+      "placeholderA": "Winner of M95",
+      "placeholderB": "Winner of M96",
+      "kickoffUtc": "2026-07-12T01:00:00Z",
+      "status": "upcoming fixture",
+      "score": null,
+      "penalties": null,
+      "winner": null,
+      "highlighted": false
+    },
+    {
+      "id": "M101",
+      "matchNumber": 101,
+      "round": "Semi-final",
+      "teamA": null,
+      "teamB": null,
+      "placeholderA": "Winner of M97",
+      "placeholderB": "Winner of M98",
+      "kickoffUtc": "2026-07-14T19:00:00Z",
+      "status": "upcoming fixture",
+      "score": null,
+      "penalties": null,
+      "winner": null,
+      "highlighted": false
+    },
+    {
+      "id": "M102",
+      "matchNumber": 102,
+      "round": "Semi-final",
+      "teamA": null,
+      "teamB": null,
+      "placeholderA": "Winner of M99",
+      "placeholderB": "Winner of M100",
+      "kickoffUtc": "2026-07-15T19:00:00Z",
+      "status": "upcoming fixture",
+      "score": null,
+      "penalties": null,
+      "winner": null,
+      "highlighted": false
+    },
+    {
+      "id": "M103",
+      "matchNumber": 103,
+      "round": "Play-off for third place",
+      "teamA": null,
+      "teamB": null,
+      "placeholderA": "Loser of M101",
+      "placeholderB": "Loser of M102",
+      "kickoffUtc": "2026-07-18T21:00:00Z",
+      "status": "upcoming fixture",
+      "score": null,
+      "penalties": null,
+      "winner": null,
+      "highlighted": false
+    },
+    {
+      "id": "M104",
+      "matchNumber": 104,
+      "round": "Final",
+      "teamA": null,
+      "teamB": null,
+      "placeholderA": "Winner of M101",
+      "placeholderB": "Winner of M102",
+      "kickoffUtc": "2026-07-19T19:00:00Z",
+      "status": "upcoming fixture",
+      "score": null,
+      "penalties": null,
+      "winner": null,
+      "highlighted": false
+    }
+  ],
+  "quarterFinalPaths": [
+    {
+      "quarterFinalId": "M97",
+      "label": "France vs Morocco",
+      "feederMatchIds": [
+        "M89",
+        "M90"
+      ]
+    },
+    {
+      "quarterFinalId": "M98",
+      "label": "Winner of M93 vs Winner of M94",
+      "feederMatchIds": [
+        "M93",
+        "M94"
+      ]
+    },
+    {
+      "quarterFinalId": "M99",
+      "label": "Norway vs England",
+      "feederMatchIds": [
+        "M91",
+        "M92"
+      ]
+    },
+    {
+      "quarterFinalId": "M100",
+      "label": "Winner of M95 vs Winner of M96",
+      "feederMatchIds": [
+        "M95",
+        "M96"
+      ]
+    }
+  ],
+  "fetchedAt": "2026-07-06T17:18:44.231Z"
+}
