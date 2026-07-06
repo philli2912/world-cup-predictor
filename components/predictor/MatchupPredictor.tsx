@@ -79,6 +79,9 @@ export function MatchupPredictor({
       {prediction ? (
         <>
           <Card className="p-6">
+            <div className="mb-4 flex justify-center">
+              <Badge tone="demo">Demo prediction</Badge>
+            </div>
             <ProbabilityResult prediction={prediction} />
           </Card>
 

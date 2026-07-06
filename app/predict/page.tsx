@@ -49,6 +49,13 @@ export default async function PredictPage() {
           knockout context but can&apos;t be predicted — the model won&apos;t
           invent numbers for them.
         </p>
+        {context && (
+          <p className="mt-2 text-xs text-zinc-400 dark:text-zinc-500">
+            Bracket quick-picks come from the static data snapshot fetched{" "}
+            {new Date(context.fetchedAt).toISOString().slice(0, 16).replace("T", " ")}{" "}
+            UTC ({context.source.name}) — the app does no live fetching.
+          </p>
+        )}
       </header>
 
       <MatchupPredictor

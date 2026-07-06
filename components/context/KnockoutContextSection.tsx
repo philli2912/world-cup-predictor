@@ -1,7 +1,7 @@
 import type { KnockoutContext } from "@/lib/types";
-import { Badge, statusTone } from "@/components/ui/Badge";
+import { Badge } from "@/components/ui/Badge";
 import { Card, CardHeader } from "@/components/ui/Card";
-import { FreshnessBadge } from "./FreshnessBadge";
+import { DataSnapshotCard } from "./DataSnapshotCard";
 import { MatchRow } from "./MatchRow";
 
 export function KnockoutContextSection({
@@ -49,13 +49,9 @@ export function KnockoutContextSection({
             </a>
           </p>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <Badge tone={statusTone(context.dataStatus)}>
-            {context.dataStatus}
-          </Badge>
-          <FreshnessBadge fetchedAt={context.fetchedAt} />
-        </div>
       </div>
+
+      <DataSnapshotCard context={context} />
 
       {context.notes.length > 0 && (
         <p className="rounded-xl bg-amber-50 px-4 py-3 text-xs text-amber-800 ring-1 ring-inset ring-amber-600/20 dark:bg-amber-500/10 dark:text-amber-300 dark:ring-amber-500/25">

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "update-data": "tsx scripts/update-knockout-context.ts"
+    "update-data": "tsx scripts/update-knockout-context.ts && tsx scripts/generate-prediction-log.ts",
+    "generate-log": "tsx scripts/generate-prediction-log.ts"
   },
   "dependencies": {
     "next": "16.2.10",

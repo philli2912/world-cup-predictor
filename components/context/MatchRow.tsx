@@ -1,5 +1,6 @@
 import type { KnockoutMatch } from "@/lib/types";
 import { Badge, statusTone } from "@/components/ui/Badge";
+import { findTeamByName } from "@/lib/model/teams";
 
 function TeamSlot({
   team,
@@ -44,6 +45,13 @@ const kickoffFormat = new Intl.DateTimeFormat("en-GB", {
 
 export function MatchRow({ match }: { match: KnockoutMatch }) {
   const finished = match.status === "confirmed result";
+  // Flag upcoming fixtures the predictor can't model — the app never
+  // invents strength values for teams outside the demo dataset.
+  const lacksModelData =
+    !finished &&
+    match.teamA &&
+    match.teamB &&
+    (!findTeamByName(match.teamA.name) || !findTeamByName(match.teamB.name));
 
   return (
     <div
@@ -85,7 +93,10 @@ export function MatchRow({ match }: { match: KnockoutMatch }) {
             {kickoffFormat.format(new Date(match.kickoffUtc))} UTC
           </span>
         )}
-        <Badge tone={statusTone(match.status)}>{match.status}</Badge>
+        {lacksModelData ? <Badge tone="warning">no model data</Badge> : null}
+        <Badge tone={statusTone(match.status)}>
+          {finished ? "completed result" : match.status}
+        </Badge>
       </div>
     </div>
   );
