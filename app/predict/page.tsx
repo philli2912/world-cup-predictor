@@ -9,14 +9,14 @@ import {
 export const metadata: Metadata = {
   title: "Matchup predictor",
   description:
-    "Estimate win probabilities for a World Cup knockout matchup using an interpretable demo strength model.",
+    "Estimate win probabilities for the active World Cup knockout teams using source-backed FIFA rank and Elo inputs in a demo-calibrated model.",
 };
 
 export default async function PredictPage() {
   const context = await loadKnockoutContext();
 
   // Offer real upcoming fixtures as one-click picks — but only where both
-  // teams exist in the demo model dataset. Others are never silently mapped.
+  // teams exist in the active-team dataset. Others are never silently mapped.
   const quickPicks: QuickPick[] =
     context?.upcomingMatches
       .filter((m) => m.teamA && m.teamB)
@@ -44,10 +44,11 @@ export default async function PredictPage() {
           Matchup predictor
         </h1>
         <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-          Pick any two of the 16 teams in the demo dataset. Teams from the live
-          bracket without model data (e.g. Norway, Colombia) are shown in the
-          knockout context but can&apos;t be predicted — the model won&apos;t
-          invent numbers for them.
+          Pick any two of the 12 teams still active in the knockout bracket.
+          FIFA rank and Elo rating are source-backed; the history score is a
+          derived demo value. Eliminated teams stay visible in completed
+          results but are not modelled forward — the model won&apos;t invent
+          numbers for them.
         </p>
         {context && (
           <p className="mt-2 text-xs text-zinc-400 dark:text-zinc-500">

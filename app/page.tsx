@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/Badge";
 const steps = [
   {
     title: "Blend three signals",
-    body: "Each team gets a strength score from Elo rating (50%), FIFA ranking (30%), and World Cup history (20%) — weights chosen for interpretability, not fitted to outcomes.",
+    body: "Each active team gets a strength score from a source-backed Elo rating (50%), source-backed FIFA ranking (30%), and a derived demo World Cup history score (20%) — weights chosen for interpretability, not fitted to outcomes.",
   },
   {
     title: "Compare the gap",
@@ -24,14 +24,17 @@ export default async function Home() {
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-16 px-4 py-16 sm:px-6">
       <section className="flex flex-col items-center gap-6 text-center">
-        <Badge tone="demo">Portfolio project · demo model values</Badge>
+        <Badge tone="demo">
+          Portfolio project · source-backed inputs · demo-calibrated model
+        </Badge>
         <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-100">
           Who wins a World Cup knockout tie?
         </h1>
         <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
           An interpretable strength model that estimates win probabilities for
-          any matchup — and shows its reasoning. Built to demonstrate
-          forecasting and product thinking, not to beat the bookmakers.
+          the teams still alive in the bracket — and shows its reasoning.
+          Built to demonstrate forecasting and product thinking, not to beat
+          the bookmakers.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Link

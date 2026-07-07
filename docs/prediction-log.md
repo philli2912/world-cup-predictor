@@ -1,10 +1,10 @@
 # Prediction log
 
-A frozen record of what was known — and what the demo model estimated —
-at the time the tournament snapshot was fetched. Regenerated whenever the
+A frozen record of what was known — and what the model estimated — at
+the time the tournament snapshot was fetched. Regenerated whenever the
 snapshot updates; git history preserves earlier versions.
 
-- **Log generated:** 2026-07-06T17:45:20.952Z
+- **Log generated:** 2026-07-07T00:53:23.452Z
 - **Snapshot fetchedAt:** 2026-07-06T17:18:44.231Z
 - **Source:** FIFA website data endpoint (fixtures/results)
 - **Source URL:** https://api.fifa.com/api/v3/calendar/matches?idCompetition=17&idSeason=285023&count=500&language=en
@@ -15,14 +15,19 @@ snapshot updates; git history preserves earlier versions.
 
 - Completed matches below are **displayed as results, not predictions** —
   the model takes no credit for matches already decided at snapshot time.
-- Demo predictions **only apply to fixtures that were upcoming at snapshot
+- Predictions **only apply to fixtures that were upcoming at snapshot
   time**. A prediction logged after a result is known would be worthless;
   the `fetchedAt` timestamp and git commit history establish the ordering.
-- All model outputs are **demo/model values** computed from hand-set
-  placeholder inputs (see `lib/model/teams.ts`), unless documented
-  otherwise. The probability curve is uncalibrated. Nothing in this log
-  demonstrates predictive accuracy — only transparency about what was
-  claimed, and when.
+- **Only teams still active in the bracket are modelled forward.**
+  Eliminated teams remain in the completed-results table above but carry
+  no model data — no prediction is ever produced for them.
+- Model inputs (see `data/teamStrength.json`): FIFA rank and Elo rating
+  are **source-backed** (official FIFA Men's World Ranking and
+  eloratings.net, with per-team source URLs and as-of dates); the World
+  Cup history score is a **derived demo value**. The probability curve is
+  **demo-calibrated**, not professional forecasting. Source-backed inputs
+  improve transparency but do not demonstrate predictive accuracy — this
+  log only documents what was claimed, and when.
 
 ## Completed matches at snapshot time (20)
 
@@ -66,20 +71,17 @@ snapshot updates; git history preserves earlier versions.
 | M103 | Play-off for third place | Loser of M101 vs Loser of M102 | 2026-07-18T21:00:00Z | upcoming fixture |
 | M104 | Final | Winner of M101 vs Winner of M102 | 2026-07-19T19:00:00Z | upcoming fixture |
 
-## Demo predictions for upcoming fixtures (3)
+## Predictions for upcoming fixtures (6)
 
-Only fixtures where both teams exist in the 16-team demo dataset.
-**Demo model values — uncalibrated, not betting advice.**
+Only fixtures where both teams are in the active-team strength dataset
+(source-backed FIFA rank & Elo, derived demo history score).
+**Demo-calibrated model — not professional forecasting, not betting advice.**
 
 | Match | Fixture | P(win) | Favored |
 |---|---|---|---|
-| M93 | Portugal vs Spain | 37% / 63% | Spain |
-| M94 | USA vs Belgium | 31% / 69% | Belgium |
-| M97 | France vs Morocco | 83% / 17% | France |
-
-No prediction is logged for these upcoming fixtures because at least
-one team is outside the demo dataset (the model never invents values):
-
-- M95: Argentina vs Egypt
-- M96: Switzerland vs Colombia
-- M99: Norway vs England
+| M93 | Portugal vs Spain | 34% / 66% | Spain |
+| M94 | United States vs Belgium | 35% / 65% | Belgium |
+| M95 | Argentina vs Egypt | 92% / 8% | Argentina |
+| M96 | Switzerland vs Colombia | 43% / 57% | Colombia |
+| M97 | France vs Morocco | 78% / 22% | France |
+| M99 | Norway vs England | 23% / 77% | England |

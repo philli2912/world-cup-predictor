@@ -80,7 +80,7 @@ export function MatchupPredictor({
         <>
           <Card className="p-6">
             <div className="mb-4 flex justify-center">
-              <Badge tone="demo">Demo prediction</Badge>
+              <Badge tone="demo">demo-calibrated estimate</Badge>
             </div>
             <ProbabilityResult prediction={prediction} />
           </Card>
@@ -90,7 +90,7 @@ export function MatchupPredictor({
               <CardHeader
                 title="Why the model leans this way"
                 subtitle="Factors ordered by influence on this matchup"
-                aside={<Badge tone="demo">demo model values</Badge>}
+                aside={<Badge tone="source">FIFA &amp; Elo: source-backed</Badge>}
               />
               <ul className="flex flex-col gap-2.5 px-6 py-4 text-sm text-zinc-600 dark:text-zinc-400">
                 {prediction.explanation.map((line) => (
@@ -106,7 +106,7 @@ export function MatchupPredictor({
               <CardHeader
                 title="Strength score inputs"
                 subtitle="Green marks the stronger value per factor"
-                aside={<Badge tone="demo">demo model values</Badge>}
+                aside={<Badge tone="demo">history: derived demo</Badge>}
               />
               <div className="px-6 py-2">
                 <StrengthBreakdown prediction={prediction} />
@@ -115,7 +115,10 @@ export function MatchupPredictor({
           </div>
 
           <p className="text-center text-xs text-zinc-400 dark:text-zinc-500">
-            Demo estimate from placeholder inputs — not betting advice. See{" "}
+            FIFA rank and Elo rating are source-backed; the World Cup history
+            score is a derived demo value and the probability curve is
+            demo-calibrated, not professional forecasting. Not betting advice.
+            See{" "}
             <Link href="/methodology" className="underline underline-offset-2">
               how this is calculated
             </Link>{" "}

@@ -41,8 +41,8 @@ async function main() {
   const completed = context.completedMatches;
   const upcoming = context.upcomingMatches;
 
-  // Demo predictions only for fixtures that were upcoming at snapshot time
-  // and where BOTH teams exist in the demo model dataset.
+  // Predictions only for fixtures that were upcoming at snapshot time and
+  // where BOTH teams exist in the active-team strength dataset.
   const predictions = upcoming
     .filter((m) => m.teamA && m.teamB)
     .flatMap((m) => {
@@ -72,8 +72,8 @@ async function main() {
   const lines: string[] = [
     "# Prediction log",
     "",
-    "A frozen record of what was known — and what the demo model estimated —",
-    "at the time the tournament snapshot was fetched. Regenerated whenever the",
+    "A frozen record of what was known — and what the model estimated — at",
+    "the time the tournament snapshot was fetched. Regenerated whenever the",
     "snapshot updates; git history preserves earlier versions.",
     "",
     `- **Log generated:** ${new Date().toISOString()}`,
@@ -87,14 +87,19 @@ async function main() {
     "",
     "- Completed matches below are **displayed as results, not predictions** —",
     "  the model takes no credit for matches already decided at snapshot time.",
-    "- Demo predictions **only apply to fixtures that were upcoming at snapshot",
+    "- Predictions **only apply to fixtures that were upcoming at snapshot",
     "  time**. A prediction logged after a result is known would be worthless;",
     "  the `fetchedAt` timestamp and git commit history establish the ordering.",
-    "- All model outputs are **demo/model values** computed from hand-set",
-    "  placeholder inputs (see `lib/model/teams.ts`), unless documented",
-    "  otherwise. The probability curve is uncalibrated. Nothing in this log",
-    "  demonstrates predictive accuracy — only transparency about what was",
-    "  claimed, and when.",
+    "- **Only teams still active in the bracket are modelled forward.**",
+    "  Eliminated teams remain in the completed-results table above but carry",
+    "  no model data — no prediction is ever produced for them.",
+    "- Model inputs (see `data/teamStrength.json`): FIFA rank and Elo rating",
+    "  are **source-backed** (official FIFA Men's World Ranking and",
+    "  eloratings.net, with per-team source URLs and as-of dates); the World",
+    "  Cup history score is a **derived demo value**. The probability curve is",
+    "  **demo-calibrated**, not professional forecasting. Source-backed inputs",
+    "  improve transparency but do not demonstrate predictive accuracy — this",
+    "  log only documents what was claimed, and when.",
     "",
     `## Completed matches at snapshot time (${completed.length})`,
     "",
@@ -114,10 +119,11 @@ async function main() {
         `| ${m.id} | ${m.round} | ${slot(m.teamA, m.placeholderA)} vs ${slot(m.teamB, m.placeholderB)} | ${m.kickoffUtc} | ${m.status} |`,
     ),
     "",
-    `## Demo predictions for upcoming fixtures (${predictions.length})`,
+    `## Predictions for upcoming fixtures (${predictions.length})`,
     "",
-    "Only fixtures where both teams exist in the 16-team demo dataset.",
-    "**Demo model values — uncalibrated, not betting advice.**",
+    "Only fixtures where both teams are in the active-team strength dataset",
+    "(source-backed FIFA rank & Elo, derived demo history score).",
+    "**Demo-calibrated model — not professional forecasting, not betting advice.**",
     "",
   ];
 
@@ -138,7 +144,8 @@ async function main() {
     lines.push(
       "",
       "No prediction is logged for these upcoming fixtures because at least",
-      "one team is outside the demo dataset (the model never invents values):",
+      "one team is outside the active-team dataset (the model never invents",
+      "values for teams it doesn't carry):",
       "",
       ...noModelData.map(
         (m) => `- ${m.id}: ${m.teamA!.name} vs ${m.teamB!.name}`,

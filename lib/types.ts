@@ -2,6 +2,22 @@
 
 // ---------- Team strength model ----------
 
+/**
+ * Provenance status of a single model input:
+ * - "source_backed": taken from a documented external source, with URL
+ *   and as-of date recorded in data/teamStrength.json.
+ * - "derived_demo": hand-derived demo value with no documented source.
+ */
+export type FactorStatus = "source_backed" | "derived_demo";
+
+export interface FactorProvenance {
+  status: FactorStatus;
+  /** null for derived demo values */
+  sourceUrl: string | null;
+  /** ISO date the value is valid as of; null for derived demo values */
+  asOf: string | null;
+}
+
 export interface Team {
   /** Stable slug used across the app, e.g. "france" */
   id: string;
@@ -9,14 +25,22 @@ export interface Team {
   /** Three-letter code, e.g. "FRA" */
   code: string;
   flag: string;
-  /** Alternate names used by external data sources, e.g. "Korea Republic" */
+  /** Alternate names used by external data sources, e.g. "USA" */
   aliases?: string[];
-  /** Elo-style rating. DEMO VALUE — see lib/model/teams.ts header. */
+  /** Still alive in the knockout bracket — only active teams are modelled */
+  isActive: boolean;
+  /** Elo rating (source-backed — see provenance) */
   elo: number;
-  /** FIFA world ranking position (lower is better). DEMO VALUE. */
+  /** FIFA world ranking position, lower is better (source-backed) */
   fifaRanking: number;
-  /** World Cup pedigree score, 0–100. DEMO VALUE. */
+  /** World Cup pedigree score, 0–100 (derived demo value) */
   worldCupHistory: number;
+  provenance: {
+    elo: FactorProvenance;
+    fifaRanking: FactorProvenance;
+    worldCupHistory: FactorProvenance;
+  };
+  notes?: string;
 }
 
 export interface ModelWeights {

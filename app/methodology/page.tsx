@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { Card, CardHeader } from "@/components/ui/Card";
-import { teams } from "@/lib/model/teams";
+import {
+  activeTeams,
+  strengthRetrievedAt,
+  strengthSources,
+} from "@/lib/model/teams";
 import { factorLabels, PROBABILITY_SCALE, weights } from "@/lib/model/weights";
 
 export const metadata: Metadata = {
@@ -62,9 +66,11 @@ export default function MethodologyPage() {
             </li>
           </ul>
           <p className="mt-4">
-            Each factor is min–max normalized across the {teams.length}-team
-            dataset, so scores are relative to this field — not absolute
-            measures.
+            Each factor is min–max normalized across the {activeTeams.length}{" "}
+            teams still active in the knockout bracket, so scores are relative
+            to this field — not absolute measures. Eliminated teams are not
+            modelled: they remain visible in completed results, but the model
+            carries no forward-looking data for them.
           </p>
         </div>
       </Card>
@@ -83,10 +89,12 @@ export default function MethodologyPage() {
             A {PROBABILITY_SCALE}-point strength gap corresponds to 10:1 odds;
             equal strengths give 50/50. The scale constant was chosen by hand
             so that typical gaps in this dataset produce plausible-looking
-            probabilities — it is <em>not</em> calibrated against historical
-            results. &ldquo;Win&rdquo; here means advancing (extra time and
-            penalties included); the model doesn&apos;t predict draws or
-            scorelines.
+            probabilities — the curve is <em>demo-calibrated</em>, not fitted
+            or backtested against historical results the way professional
+            forecasting is. Source-backed inputs make the model transparent;
+            they do not make it accurate. &ldquo;Win&rdquo; here means
+            advancing (extra time and penalties included); the model
+            doesn&apos;t predict draws or scorelines.
           </p>
         </div>
       </Card>
@@ -94,21 +102,53 @@ export default function MethodologyPage() {
       <Card>
         <CardHeader
           title="3 · Data sources"
-          aside={<Badge tone="demo">demo model values</Badge>}
+          aside={<Badge tone="source">FIFA &amp; Elo: source-backed</Badge>}
         />
         <div className="px-6 py-4 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
           <ul className="flex flex-col gap-3">
             <li>
               <strong className="font-medium text-zinc-900 dark:text-zinc-100">
-                Team strength inputs
+                FIFA ranking — source-backed
               </strong>{" "}
-              — hand-set placeholder values in{" "}
+              — the official{" "}
+              <a
+                href={strengthSources.fifaRank.url}
+                className="underline underline-offset-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {strengthSources.fifaRank.name}
+              </a>
+              , ranking release of {strengthSources.fifaRank.asOf}. Values and
+              per-team source URLs are recorded in{" "}
               <code className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-xs dark:bg-zinc-800">
-                lib/model/teams.ts
+                data/teamStrength.json
               </code>
-              , chosen to be plausible but not fetched from any documented
-              source. Every output derived from them is labeled{" "}
-              <em>demo model values</em>.
+              .
+            </li>
+            <li>
+              <strong className="font-medium text-zinc-900 dark:text-zinc-100">
+                Elo rating — source-backed
+              </strong>{" "}
+              — from{" "}
+              <a
+                href={strengthSources.eloRating.url}
+                className="underline underline-offset-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {strengthSources.eloRating.name}
+              </a>{" "}
+              (eloratings.net), as of {strengthSources.eloRating.asOf}. Elo is
+              an independent rating system, not official FIFA data.
+            </li>
+            <li>
+              <strong className="font-medium text-zinc-900 dark:text-zinc-100">
+                World Cup history — derived demo value
+              </strong>{" "}
+              — a hand-derived 0–100 pedigree score with no documented source,
+              labeled <em>derived_demo</em> in the dataset. It exists to
+              illustrate blending a slow-moving prior; treat it as demo data.
             </li>
             <li>
               <strong className="font-medium text-zinc-900 dark:text-zinc-100">
@@ -122,10 +162,15 @@ export default function MethodologyPage() {
             </li>
           </ul>
           <p className="mt-4">
-            The two layers never mix: bracket data describes{" "}
+            Strength inputs were retrieved{" "}
+            {strengthRetrievedAt.slice(0, 10)} and cover{" "}
+            <strong className="font-medium text-zinc-900 dark:text-zinc-100">
+              only the {activeTeams.length} teams still active in the bracket
+            </strong>
+            . The two layers never mix: bracket data describes{" "}
             <em>what is actually happening</em>, model data produces{" "}
-            <em>hypothetical estimates</em>. Real teams without model data get
-            no prediction.
+            <em>hypothetical estimates</em>. Eliminated teams appear in
+            results but get no prediction — the model never invents values.
           </p>
         </div>
       </Card>

@@ -75,6 +75,11 @@ export function StrengthBreakdown({
           </tr>
         </tbody>
       </table>
+      <p className="pb-3 pt-1 text-[11px] leading-4 text-zinc-400 dark:text-zinc-500">
+        FIFA ranking (as of {a.team.provenance.fifaRanking.asOf}) and Elo
+        rating (as of {a.team.provenance.elo.asOf}) are source-backed; World
+        Cup history is a derived demo score.
+      </p>
     </div>
   );
 }

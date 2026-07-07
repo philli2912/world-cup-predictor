@@ -5,13 +5,13 @@ import type {
   Team,
   TeamStrength,
 } from "@/lib/types";
-import { teams } from "./teams";
+import { activeTeams } from "./teams";
 import { factorLabels, PROBABILITY_SCALE, weights } from "./weights";
 
 /**
- * Pure prediction functions. No React, no I/O — designed so the demo
- * dataset in teams.ts can later be swapped for real data without
- * touching any UI code.
+ * Pure prediction functions. No React, no I/O. Normalization spans the
+ * active knockout field only (data/teamStrength.json) — scores are
+ * relative to the teams still alive, not to world football at large.
  */
 
 interface FactorRange {
@@ -20,7 +20,7 @@ interface FactorRange {
 }
 
 function datasetRange(key: FactorKey): FactorRange {
-  const values = teams.map((t) => t[key]);
+  const values = activeTeams.map((t) => t[key]);
   return { min: Math.min(...values), max: Math.max(...values) };
 }
 

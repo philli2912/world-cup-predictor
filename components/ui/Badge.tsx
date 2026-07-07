@@ -1,12 +1,20 @@
 import type { ReactNode } from "react";
 
-export type BadgeTone = "confirmed" | "upcoming" | "demo" | "neutral" | "warning";
+export type BadgeTone =
+  | "confirmed"
+  | "upcoming"
+  | "demo"
+  | "source"
+  | "neutral"
+  | "warning";
 
 const tones: Record<BadgeTone, string> = {
   confirmed:
     "bg-emerald-50 text-emerald-700 ring-emerald-600/20 dark:bg-emerald-500/10 dark:text-emerald-400 dark:ring-emerald-500/25",
   upcoming:
     "bg-sky-50 text-sky-700 ring-sky-600/20 dark:bg-sky-500/10 dark:text-sky-400 dark:ring-sky-500/25",
+  source:
+    "bg-indigo-50 text-indigo-700 ring-indigo-600/20 dark:bg-indigo-500/10 dark:text-indigo-400 dark:ring-indigo-500/25",
   demo:
     "bg-amber-50 text-amber-700 ring-amber-600/25 dark:bg-amber-500/10 dark:text-amber-400 dark:ring-amber-500/25",
   neutral:
