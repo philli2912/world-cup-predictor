@@ -46,7 +46,7 @@ const kickoffFormat = new Intl.DateTimeFormat("en-GB", {
 export function MatchRow({ match }: { match: KnockoutMatch }) {
   const finished = match.status === "confirmed result";
   // Flag upcoming fixtures the predictor can't model — the app never
-  // invents strength values for teams outside the demo dataset.
+  // invents strength values for teams outside the active-team dataset.
   const lacksModelData =
     !finished &&
     match.teamA &&

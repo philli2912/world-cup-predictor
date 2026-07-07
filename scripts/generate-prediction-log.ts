@@ -1,7 +1,7 @@
 /**
  * Generates docs/prediction-log.md from the committed tournament snapshot
  * (data/knockoutContext.json). The log freezes what was known — and what
- * the demo model predicted — at snapshot time, so git history documents
+ * the model predicted — at snapshot time, so git history documents
  * provenance. It never re-fetches data.
  *
  * Run: npm run generate-log  (also runs automatically after update-data)
@@ -160,7 +160,7 @@ async function main() {
   console.log(
     `✓ Wrote ${OUT_PATH}\n` +
       `  snapshot fetchedAt: ${context.fetchedAt}\n` +
-      `  completed: ${completed.length} · upcoming: ${upcoming.length} · demo predictions: ${predictions.length}`,
+      `  completed: ${completed.length} · upcoming: ${upcoming.length} · predictions: ${predictions.length}`,
   );
 }
 

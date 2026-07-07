@@ -15,8 +15,9 @@ const utcFormat = new Intl.DateTimeFormat("en-GB", {
 const legend: { label: string; tone: Parameters<typeof Badge>[0]["tone"]; meaning: string }[] = [
   { label: "Completed result", tone: "confirmed", meaning: "an official outcome from the fetched snapshot" },
   { label: "Upcoming fixture", tone: "upcoming", meaning: "scheduled but not yet played at snapshot time" },
-  { label: "Demo prediction", tone: "demo", meaning: "model output from placeholder inputs — illustrative only" },
-  { label: "No model data", tone: "warning", meaning: "team not in the demo dataset; no prediction is invented" },
+  { label: "Source-backed", tone: "source", meaning: "input from a documented source, with URL and as-of date recorded in data/teamStrength.json" },
+  { label: "Demo-calibrated estimate", tone: "demo", meaning: "model output blending source-backed FIFA/Elo snapshots with a derived demo history score; the probability curve is not backtested" },
+  { label: "No model data", tone: "warning", meaning: "team not in the active-team strength dataset (e.g. eliminated); no prediction is invented" },
 ];
 
 export function DataSnapshotCard({ context }: { context: KnockoutContext }) {

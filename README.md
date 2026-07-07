@@ -1,9 +1,10 @@
 # World Cup Knockout Predictor
 
-An interpretable demo model that estimates win probabilities for World Cup
-knockout matchups — and shows its reasoning. Built as a small AI/data
-portfolio project demonstrating practical forecasting, honest data
-provenance, and clean product execution.
+An interpretable, demo-calibrated model that estimates win probabilities for
+the active World Cup knockout teams from source-backed FIFA rank and Elo
+inputs — and shows its reasoning. Built as a small AI/data portfolio project
+demonstrating practical forecasting, honest data provenance, and clean
+product execution.
 
 **Not** a betting model. **Not** affiliated with or endorsed by FIFA. It does
 not claim to accurately predict the World Cup — see
@@ -91,8 +92,9 @@ redeploy.
 - Tailwind CSS v4
 - No backend, no database — deployable to Vercel as-is
 
-Model logic (`lib/model/`) is pure TypeScript with no React or I/O, so the
-demo dataset can be swapped for real data without touching UI code.
+Model logic (`lib/model/`) is pure TypeScript with no React or I/O; strength
+inputs load from `data/teamStrength.json`, so refreshing or extending the
+dataset never touches UI code.
 
 ## Getting started
 

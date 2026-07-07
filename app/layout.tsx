@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s · Knockout Predictor",
   },
   description:
-    "An interpretable demo model estimating win probabilities for World Cup knockout matchups. A portfolio project — not betting advice.",
+    "An interpretable, demo-calibrated model estimating win probabilities for the active World Cup knockout teams from source-backed FIFA rank and Elo inputs. A portfolio project — not betting advice.",
 };
 
 export default function RootLayout({
