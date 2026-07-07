@@ -12,9 +12,9 @@ export function Footer() {
         </p>
         <p>
           Tournament fixtures/results are fetched from a FIFA website data
-          endpoint and stored as a static snapshot. FIFA ranks and Elo ratings
-          are source-backed static snapshots; the World Cup history score is a
-          derived demo value —{" "}
+          endpoint and stored as a static snapshot. FIFA ranking and Elo
+          inputs are source-backed snapshots; World Cup history remains a
+          derived demo input —{" "}
           <Link
             href="/limitations"
             className="underline decoration-zinc-300 underline-offset-2 hover:text-zinc-700 dark:decoration-zinc-700 dark:hover:text-zinc-300"
